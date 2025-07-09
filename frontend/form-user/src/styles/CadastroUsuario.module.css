@@ -1,0 +1,85 @@
+.form {
+  background-color: rgb(25, 25, 25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  color: white;
+  border-radius: 8px;
+  margin: 40px auto;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.input,
+.textarea {
+  padding: 10px 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1e1e1e;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #4dabf7;
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #339af0;
+}
+
+.link{
+  color:#4dabf7;
+}
+
+.addressRow {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.addressInput {
+  flex: 1;
+}
+
+.input select {
+  appearance: none;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input select:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
+}
