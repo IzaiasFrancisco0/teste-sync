@@ -1,7 +1,7 @@
 import styles from '../styles/ListaUsuariosCadastrados.module.css';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../services/api';
 
 export function ListaUsuariosCadastrados({ termoBusca = '' }) {
    const [usuarios, setUsuarios] = useState([]);
@@ -12,7 +12,7 @@ export function ListaUsuariosCadastrados({ termoBusca = '' }) {
    useEffect(() => {
       (async () => {
          try {
-            const { data } = await axios.get('http://localhost:5000/usuarios');
+            const { data } = await api.get('/usuarios');
             setUsuarios(data);
          } catch (err) {
             console.error('Erro ao buscar usuários:', err);
@@ -28,7 +28,7 @@ export function ListaUsuariosCadastrados({ termoBusca = '' }) {
       if (!confirmacao) return;
 
       try {
-         await axios.delete(`http://localhost:5000/usuarios/${id}`);
+         await api.delete(`/usuarios/${id}`);
          setUsuarios((prev) => prev.filter((usuario) => usuario.id !== id));
       } catch (err) {
          console.error('Erro ao deletar usuário:', err);
@@ -54,7 +54,7 @@ export function ListaUsuariosCadastrados({ termoBusca = '' }) {
                <img
                   src={
                      usuario.imagem
-                        ? `http://localhost:5000/uploads/${usuario.imagem}`
+                        ? `${import.meta.env.VITE_API_URL}/uploads/${usuario.imagem}`
                         : '/img/placeholder-avatar.png'
                   }
                   alt={usuario.nome}

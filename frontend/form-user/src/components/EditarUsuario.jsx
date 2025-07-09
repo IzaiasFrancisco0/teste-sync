@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { UsuarioForm } from '../components/UsuarioForm';
+import { api } from '../services/api';
 
 export function EditarUsuario() {
   const { id } = useParams();
@@ -9,7 +9,7 @@ export function EditarUsuario() {
   const [usuario, setUsuario] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/usuarios/${id}`)
+    api.get(`/usuarios/${id}`)
       .then(res => setUsuario(res.data))
       .catch(() => alert('Usuário não encontrado'));
   }, [id]);
@@ -17,7 +17,7 @@ export function EditarUsuario() {
   async function atualizar(dados) {
     const form = new FormData();
     Object.entries(dados).forEach(([k, v]) => v && form.append(k, v));
-    await axios.put(`http://localhost:5000/usuarios/${id}`, form);
+    await api.put(`/usuarios/${id}`, form);
     alert('Atualizado!');
     navigate('/usuarios');
   }

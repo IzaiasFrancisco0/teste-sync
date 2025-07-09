@@ -1,8 +1,8 @@
+import styles from '../styles/CadastroUsuario.module.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { UserSchema } from '../schemas/UsuarioSchema';
-import styles from '../styles/CadastroUsuario.module.css';
+import { api } from '../services/api';
 
 export function CadastrarUsuario() {
   const [imagem, setImagem] = useState(null);
@@ -25,7 +25,7 @@ export function CadastrarUsuario() {
       form.append('estado', estado);
       form.append('biografia', biografia);
 
-      const { data } = await axios.post('http://localhost:5000/usuarios', form);
+      const { data } = await api.post('/usuarios', form);
 
       setUsuarios((prev) => [...prev, data]);
       alert('Usuário cadastrado com sucesso!');

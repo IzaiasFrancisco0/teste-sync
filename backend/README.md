@@ -1,7 +1,3 @@
-# 📦 Backend Node.js com TypeScript, Express e MySQL
-
-Este é um projeto backend desenvolvido com Node.js, TypeScript, Express e MySQL. Ele foi criado com foco em boas práticas de organização, validações com Zod, armazenamento de arquivos com Multer e estrutura escalável. Ideal para aplicações como sistemas de cadastro, autenticação e gestão de dados.
-
 ## 🚀 Tecnologias Utilizadas
 
 - **Node.js**
@@ -14,15 +10,13 @@ Este é um projeto backend desenvolvido com Node.js, TypeScript, Express e MySQL
 - **CORS**
 - **Nodemon / ts-node / ts-node-dev**
 
-
 ## 🛠️ Instalação e Uso
 
 ## 1. Clonar o repositório
 
-git clone https://github.com/seu-usuario/backend.git
+git clone https://github.com/IzaiasFrancisco0/backend-teste-sync.git
 cd backend
 npm install
-
 
 ## 2. Configurar o arquivo .env
 
@@ -49,7 +43,6 @@ npm start
 - npm run build — Compila os arquivos TypeScript para a pasta dist/.
 - npm start — Inicia o servidor em produção com os arquivos da pasta dist/.
 
-
 ## 📁 Estrutura do Projeto
 
 backend/
@@ -59,7 +52,7 @@ backend/
 │ ├── middlewares/
 │ ├── routes/
 │ ├── schemas/
-│ ├── config/
+│ ├── database/
 │ └── index.ts
 ├── dist/ # Arquivos compilados
 ├── .env # Variáveis de ambiente
