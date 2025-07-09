@@ -12,11 +12,23 @@ const __dirname = path.dirname(__filename);
 
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
+const urlOrigens = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || urlOrigens.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Não permitido pelo cors'));
+    }
+  },
   credentials: true,
   optionsSuccessStatus: 200
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
