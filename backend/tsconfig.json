@@ -6,7 +6,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "types": ["node", "express"],
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
